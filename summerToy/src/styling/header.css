@@ -1,0 +1,26 @@
+.header-container {
+	display: flex;
+	justify-content: space-around;
+	border: 1px solid black;
+	height: 5rem;
+	align-items: center;
+}
+
+.header-login {
+	font-size: 1.2em;
+}
+
+.header-heading {
+	font-size: 3em;
+	text-decoration: none;
+}
+
+.header-icon {
+	width: 2em;
+}
+
+.header-login:hover,
+.header-heading:hover,
+.header-icon:hover {
+	cursor: pointer;
+}
