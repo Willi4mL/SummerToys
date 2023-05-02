@@ -1,6 +1,6 @@
 .login-container {
 	width: 20em;
-	height: 13em;
+	height: 14em;
 	left: 50%;
 	top: 14em; 
 	transform: translate(-50%, -50%);
@@ -22,6 +22,20 @@
 	grid-row: 1;
 	margin-bottom: 1em;
 	width: 5em;
+	display: flex;
+	justify-content: center;
+}
+
+.close-icon {
+	grid-column: 3;
+	grid-row: 1;
+	width: 1.7em;
+	display: flex;
+	justify-self: flex-end;
+}
+
+.close-icon {
+	cursor: pointer;
 }
 
 .username {
@@ -50,6 +64,7 @@
 	border: 1px solid #CFCCCC;
 	box-shadow: 2px 3px 4px #00000025;
 	height: 2em;
+	font-size: 1em;
 }
 
 .login-input-password {
@@ -61,6 +76,7 @@
 	border: 1px solid #CFCCCC;
 	box-shadow: 2px 3px 4px #00000025;
 	height: 2em;
+	font-size: 1em;
 }
 
 .login-button {

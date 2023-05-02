@@ -4,3 +4,13 @@ export const loginState = atom({
 	key: 'loginState',
 	default: false
 })
+
+export const isLoggedInState = atom({
+	key: 'isLoggedInState',
+	default: true
+})
+
+export const isAddObjectState = atom({
+	key: 'isAddObjectState',
+	default: true
+})

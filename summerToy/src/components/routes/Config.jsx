@@ -2,6 +2,8 @@ import { createHashRouter } from "react-router-dom";
 import Root from "./Root";
 import Home from "./Home";
 import Cart from "./Cart";
+import LoggedIn from "./LoggedIn";
+import AddObject from "./AddObject";
 
 const router = createHashRouter([
 	{
@@ -14,8 +16,16 @@ const router = createHashRouter([
 				element: <Home />,
 			},
 			{
-				path:'cart',
+				path: 'cart',
 				element: <Cart />,
+			},
+			{
+				path: 'logged-in',
+				element: <LoggedIn />
+			},
+			{
+				path: 'add-object',
+				element: <AddObject />,
 			},
 			{
 				path: '*',

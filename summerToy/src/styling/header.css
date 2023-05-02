@@ -19,6 +19,12 @@
 	width: 2em;
 }
 
+.empty-space {
+	display: flex;
+	justify-content: center;
+	width: 68.8px;
+}
+
 .header-login:hover,
 .header-heading:hover,
 .header-icon:hover {
