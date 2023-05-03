@@ -1,6 +1,5 @@
 import { products } from "./ProductList.js"
-
-const url = 'https://forverkliga.se/JavaScript/api/fe/'
+import { url } from "./Constant.js"
 
 async function addProduct(oneProduct) {
 	console.log('Adding product...')
@@ -15,10 +14,18 @@ async function addProduct(oneProduct) {
 	console.log('Response from API:', statusObject)
 }
 async function addAllTheProducts() {
-	products.forEach(product => {
-		addProduct(product)
+	
+	const productInfo = products.map(item => ({
+		name: item.name,
+		price: item.price,
+		picture: item.picture,
+		description: item.description,
+	}))
+
+	productInfo.forEach(item => {
+		addProduct(item)
 	})
 }
 
-// addAllTheProducts()
+addAllTheProducts()
 export { addAllTheProducts }

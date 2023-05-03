@@ -14,3 +14,8 @@ export const isBarsState = atom({
 	key: 'isBarState',
 	default: true
 })
+
+export const productState = atom({
+	key: 'productState',
+	default: []
+})
