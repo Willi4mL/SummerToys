@@ -1,10 +1,10 @@
 import { useRecoilState } from "recoil"
-import { isAddObjectState } from "./Atom"
+import { isBarsState } from "./Atom"
 
 const FilterBar = () => {
-	const [isAddObject, setIsAddObject] = useRecoilState(isAddObjectState)
+	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
 
-	if(isAddObject)
+	if(isFilterBar)
 	return (
 		<div className="filter-container">
 			<div className="flex-container">

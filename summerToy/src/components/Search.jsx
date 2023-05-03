@@ -1,10 +1,10 @@
 import { useRecoilState } from "recoil"
-import { isAddObjectState } from "./Atom"
+import { isBarsState } from "./Atom"
 
 const Search = () => {
-	const [isAddObject, setIsAddObject] = useRecoilState(isAddObjectState)
+	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
 
-	if(isAddObject){
+	if(isFilterBar){
 		return (
 			<div className="search-container">
 			<input className="search-input" placeholder="Sök"></input>

@@ -65,6 +65,7 @@
 	box-shadow: 2px 3px 4px #00000025;
 	height: 2em;
 	font-size: 1em;
+	padding-left: 0.5em;
 }
 
 .login-input-password {
@@ -77,6 +78,7 @@
 	box-shadow: 2px 3px 4px #00000025;
 	height: 2em;
 	font-size: 1em;
+	padding-left: 0.5em;
 }
 
 .login-button {

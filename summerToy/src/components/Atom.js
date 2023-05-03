@@ -10,7 +10,7 @@ export const isLoggedInState = atom({
 	default: true
 })
 
-export const isAddObjectState = atom({
-	key: 'isAddObjectState',
+export const isBarsState = atom({
+	key: 'isBarState',
 	default: true
 })
