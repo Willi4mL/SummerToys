@@ -7,7 +7,7 @@ const Search = () => {
 	const [search, setSearch] = useRecoilState(searchState)
 
 	const handleSearch = (event) => {
-		setSearch(event.target.value.toLowerCase())
+		setSearch(event.target.value)
 	}
 
 	if (isFilterBar) {

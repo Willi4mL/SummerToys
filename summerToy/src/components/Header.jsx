@@ -23,7 +23,7 @@ const Header = () => {
 
 				<p className="header-login" onClick={toggleLogIn}>Logga in</p>
 				</div>
-				<NavLink to='home'><h1 className="header-heading" onClick={() => {setFilterBar(true)}}>Jump</h1></NavLink>
+				<NavLink to='products'><h1 className="header-heading" onClick={() => {setFilterBar(true)}}>Jump</h1></NavLink>
 				<div className="empty-space">
 					<NavLink to='cart'><img className="header-icon" src="/images/cart.png" alt='add to cart' onClick={() => {setFilterBar(false)}} /> </NavLink>
 				</div>
@@ -35,9 +35,9 @@ const Header = () => {
 			<header className="header-container">
 				<div className="empty-space">
 
-				<p className="header-login" onClick={LogOut}><NavLink to='home'>Logga ut</NavLink></p>
+				<p className="header-login" onClick={LogOut}><NavLink to='products'>Logga ut</NavLink></p>
 				</div>
-				<h1 className="header-heading"><NavLink to='home' onClick={() => {setFilterBar(true)}}>Jump</NavLink></h1>
+				<h1 className="header-heading"><NavLink to='products' onClick={() => {setFilterBar(true)}}>Jump</NavLink></h1>
 				<div className="empty-space">
 					<NavLink to='add-object'><img className="header-icon" src="/images/add.png" alt='add object' onClick={() => {setFilterBar(false)}} /> </NavLink>
 				</div>

@@ -1,6 +1,6 @@
 import { createHashRouter } from "react-router-dom";
 import Root from "./Root";
-import Home from "./Home";
+import Products from "./Products";
 import Cart from "./Cart";
 import LoggedIn from "./LoggedIn";
 import AddObject from "./AddObject";
@@ -13,7 +13,7 @@ const router = createHashRouter([
 		children: [
 			{
 				path: '',
-				element: <Home />,
+				element: <Products />,
 			},
 			{
 				path: 'cart',
@@ -29,7 +29,7 @@ const router = createHashRouter([
 			},
 			{
 				path: '*',
-				element: <Home />
+				element: <Products />
 			}
 		]
 	}

@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { productState } from "../components/Atom"
 import { useRecoilState } from "recoil"
+import { shopId } from "../scripts/Constant"
 
 const AddObject = () => {
 	const [name, setName] = useState('')
@@ -8,7 +9,7 @@ const AddObject = () => {
 	const [picture, setPicture] = useState('')
 	const [productCard, setProductCard] = useRecoilState(productState)
 
-	const newItem = [
+const newItem = [
 		...productCard,
 		{
 			name,
@@ -31,9 +32,14 @@ const AddObject = () => {
 	}
 
 	const handleSubmit = () => {
-		setProductCard([...productCard, newItem])
+		setProductCard([...newItem])
+		console.log(productCard)
 		console.log(newItem)
 	}
+
+	useEffect(() => {
+		console.log('Efter handleSubmit',productCard)
+	},[productCard])
 
 	return (
 		<main>
@@ -62,4 +68,4 @@ const AddObject = () => {
 		</main>
 	)
 }
-export default AddObject
+export default AddObject  

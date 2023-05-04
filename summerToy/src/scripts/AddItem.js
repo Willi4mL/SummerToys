@@ -1,5 +1,8 @@
 import { products } from "./ProductList.js"
 import { shopId, url } from "./Constant.js"
+import { productState } from "../components/Atom.js"
+
+const [productCard, setProductCard] = useRecoilState(productState)
 
 async function addProduct(oneProduct) {
 	console.log('Adding product...')
@@ -17,17 +20,32 @@ async function addProduct(oneProduct) {
 
 async function addAllTheProducts() {
 	
-	const productInfo = products.map(item => ({
-		name: item.name,
-		price: item.price,
-		picture: item.picture,
-		description: item.description,
-		shopid: shopId
-	}))
-
-	productInfo.forEach(item => {
-		addProduct(item)
-	})
+	// if(productCard == ''){
+	// 	const productInfo = products.map(item => ({
+	// 		name: item.name,
+	// 		price: item.price,
+	// 		picture: item.picture,
+	// 		description: item.description,
+	// 		shopid: shopId
+	// 	}))
+	
+	// 	productInfo.forEach(item => {
+	// 		addProduct(item)
+	// 	})
+	// }
+	// else {
+		const productAddedInfo = productCard.map(item => ({
+			name: item.name,
+			price: item.price,
+			picture: item.picture,
+			description: item.description,
+			shopid: shopId
+		}))
+	
+		productAddedInfo.forEach(item => {
+			addProduct(item)
+		})
+	
 }
 
 addAllTheProducts()

@@ -10,6 +10,7 @@
 	border-radius: 0.8em;
 	border: 1px solid #CFCCCC;
 	box-shadow: 2px 3px 4px #00000025;
+	z-index:1;
 }
 
 .login-form {

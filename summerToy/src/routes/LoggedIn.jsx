@@ -1,8 +1,9 @@
+import Products from "./Products"
 const LoggedIn = () => (
 	<div>
 		<main>
 			<div>
-				<h1>Logged in</h1>
+				<Products />
 			</div>
 		</main>
 	</div>

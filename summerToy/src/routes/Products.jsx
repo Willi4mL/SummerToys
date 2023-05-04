@@ -1,13 +1,14 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useRecoilState } from "recoil"
 import { productState } from "../components/Atom.js"
 import { url, shopId } from "../scripts/Constant.js"
 import { searchState } from "../components/Atom.js"
 
-const Home = () => {
+const Products = () => {
 	let [productCard, setProductCard] = useRecoilState(productState)
 	const [search, setSearch] = useRecoilState(searchState)
-
+	const [findMatch, setFindMatch] = useState([])
+	
 	useEffect(() => {
 		async function fetchItem() {
 			try {
@@ -18,14 +19,18 @@ const Home = () => {
 				console.log('Problem with fetching', error)
 			}
 		}
+		console.log('Inside findmatch', findMatch);
+		console.log('inside productCard', productCard)
 		fetchItem()
 	}, [])
 
-	const findMatch = productCard?.filter((product) =>
-		product.name.includes(search)) || []
+	useEffect(() => {
+		const newMatch = productCard.filter((product) =>
+		product.name.includes(search)) 
 
-		console.log('Inside useEfect productCard:', productCard)
-		console.log('Inside useEffect findmatch', findMatch);
+		setFindMatch(newMatch)
+	},[])
+	
 
 	return (
 		<main>
@@ -52,4 +57,4 @@ const Home = () => {
 		</main>
 	)
 }
-export default Home
+export default Products
