@@ -10,7 +10,7 @@ const LogIn = () => {
 	const handleLogIn = () => {
 		setIsvisibleLogIn(false)
 		setIsloggedIn(false)
-		setFilterBar(false)
+		setFilterBar(true)
 	}
 
 	return (

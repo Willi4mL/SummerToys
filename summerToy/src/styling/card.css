@@ -1,0 +1,41 @@
+.centering-grid {
+	display: flex;
+	justify-content: center;
+}
+
+.card-grid {
+	display: grid;
+	padding-left: 0;
+	gap: 5em 0;
+}
+
+.card-container {
+	background: #fffffa;
+	max-width: 350px;
+	height: 20em;
+	border-radius: 0.8em;
+	border: 1px solid #CFCCCC;
+	box-shadow: 2px 3px 4px #00000025;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	grid-column: 1;
+}
+
+.card-img--position {
+	margin-top: 2em;
+	display: flex;
+	justify-content: center;
+}
+
+.card-img {
+	width: 10em;
+}
+
+.card-text--position {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-top: 2em;
+	margin-left: 0.5em;
+}

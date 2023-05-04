@@ -19,8 +19,11 @@ const Header = () => {
 	if (isLoggedIn) {
 		return (
 			<header className="header-container">
+				<div className="empty-space">
+
 				<p className="header-login" onClick={toggleLogIn}>Logga in</p>
-				<NavLink to='home'><h1 className="header-heading" onClick={() => {setFilterBar(true)}}>Skoja</h1></NavLink>
+				</div>
+				<NavLink to='home'><h1 className="header-heading" onClick={() => {setFilterBar(true)}}>Jump</h1></NavLink>
 				<div className="empty-space">
 					<NavLink to='cart'><img className="header-icon" src="/images/cart.png" alt='add to cart' onClick={() => {setFilterBar(false)}} /> </NavLink>
 				</div>
@@ -30,10 +33,13 @@ const Header = () => {
 	else {
 		return (
 			<header className="header-container">
-				<p className="header-login" onClick={LogOut}><NavLink to='home'>Logga ut</NavLink></p>
-				<h1 className="header-heading"><NavLink to='home' onClick={() => {setFilterBar(true)}}>Skoja</NavLink></h1>
 				<div className="empty-space">
-					<NavLink to='add-object'><img className="header-icon" src="/images/add.png" alt='add object' /> </NavLink>
+
+				<p className="header-login" onClick={LogOut}><NavLink to='home'>Logga ut</NavLink></p>
+				</div>
+				<h1 className="header-heading"><NavLink to='home' onClick={() => {setFilterBar(true)}}>Jump</NavLink></h1>
+				<div className="empty-space">
+					<NavLink to='add-object'><img className="header-icon" src="/images/add.png" alt='add object' onClick={() => {setFilterBar(false)}} /> </NavLink>
 				</div>
 			</header>
 		)

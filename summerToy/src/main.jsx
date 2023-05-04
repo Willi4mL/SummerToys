@@ -5,8 +5,9 @@ import './styling/header.css'
 import './styling/login.css'
 import './styling/searchNavbar.css'
 import './styling/addProduct.css'
+import './styling/card.css'
 import { RouterProvider } from 'react-router-dom'
-import { router } from './components/routes/Config.jsx'
+import { router } from './routes/Config.jsx'
 import { RecoilRoot } from 'recoil'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
