@@ -1,5 +1,5 @@
 import Products from "./Products"
-const LoggedIn = () => (
+const Admin = () => (
 	<div>
 		<main>
 			<div>
@@ -8,4 +8,4 @@ const LoggedIn = () => (
 		</main>
 	</div>
 )
-export default LoggedIn
+export default Admin

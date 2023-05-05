@@ -24,3 +24,8 @@ export const searchState = atom({
 	key: 'searchState',
 	default: []
 })
+
+export const addPorductFormState = atom({
+	key: 'addProductState',
+	default: false
+})
