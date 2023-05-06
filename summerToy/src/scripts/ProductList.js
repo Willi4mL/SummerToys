@@ -148,5 +148,4 @@ export const products = [
 		description: "En robust studsmatta med ram i galvaniserat stål och väderbeständig hoppmatta. Inkluderar ett skyddsnät, stege och regnskydd.",
 		id: randomId,
 	}
-
 ]

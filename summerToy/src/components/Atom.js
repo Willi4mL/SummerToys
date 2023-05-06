@@ -29,3 +29,13 @@ export const addPorductFormState = atom({
 	key: 'addProductState',
 	default: false
 })
+
+export const findMatchState = atom({
+	key: 'findMatchState',
+	default:[]
+})
+
+export const productDetailState = atom({
+	key: 'productDetail.State',
+	default: false
+})

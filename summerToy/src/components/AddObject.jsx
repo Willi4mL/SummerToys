@@ -6,6 +6,7 @@ const AddObject = () => {
 	const [name, setName] = useState('')
 	const [price, setPrice] = useState('')
 	const [picture, setPicture] = useState('')
+	const [description, setDescripton] = useState('')
 	const [productCard, setProductCard] = useRecoilState(productState)
 	const [isAddFormVisivible, setIsAddFormVisible] = useRecoilState(addPorductFormState)
 
@@ -15,6 +16,7 @@ const AddObject = () => {
 			name,
 			price,
 			picture,
+			description,
 			id: productCard.length + 1
 		}
 	]
@@ -29,6 +31,10 @@ const AddObject = () => {
 
 	const handlePicture = (e) => {
 		setPicture(e.target.value)
+	}
+
+	const handleDescription = (e) => {
+		setDescripton(e.target.value)
 	}
 
 	const handleSubmit = () => {
@@ -63,6 +69,12 @@ const AddObject = () => {
 							value={picture}
 							onChange={handlePicture}>
 						</input>
+						<p className="add-product-description">Description:</p>
+						<input className="add-product-description-input"
+							value={description}
+							onChange={handleDescription}>
+						</input>
+						
 						<button className="add-product-button"
 							onClick={handleSubmit}>Lägg till</button>
 						{/* <button className="add-product-button" onClick={onClose}>Avbryt</button> */}

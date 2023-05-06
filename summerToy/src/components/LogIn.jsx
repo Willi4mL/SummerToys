@@ -1,16 +1,18 @@
 import { useRecoilState } from "recoil"
-import { isBarsState, loginState, isLoggedInState } from "./Atom"
+import { isBarsState, loginState, isLoggedInState, productDetailState } from "./Atom"
 import { NavLink } from "react-router-dom"
 
 const LogIn = () => {
 	const [isVisibleLogIn, setIsvisibleLogIn] = useRecoilState(loginState)
 	const [isLoggedIn, setIsloggedIn] = useRecoilState(isLoggedInState)
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
+	const [isDetailVisible, setIsDetailVisible] = useRecoilState(productDetailState)
 
 	const handleLogIn = () => {
 		setIsvisibleLogIn(false)
 		setIsloggedIn(false)
 		setFilterBar(true)
+		setIsDetailVisible(false)
 	}
 
 	return (
@@ -23,7 +25,7 @@ const LogIn = () => {
 					<input className="login-input-name"></input>
 					<p className="password">Lösenord:</p>
 					<input className="login-input-password"></input>
-					<button className="login-button" onClick={handleLogIn}><NavLink to='products/admin'> Logga in </NavLink></button>
+					<button className="login-button" onClick={handleLogIn}><NavLink to='/products/admin'> Logga in </NavLink></button>
 				</form>
 			</div>}
 		</div>

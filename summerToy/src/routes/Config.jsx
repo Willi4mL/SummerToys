@@ -3,6 +3,7 @@ import Root from "./Root";
 import Products from "./Products";
 import Cart from "./Cart";
 import Admin from "./Admin";
+import ProductDetail from "./ProductDetail";
 
 const router = createHashRouter([
 	{

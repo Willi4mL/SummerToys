@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react"
 import { useRecoilState } from "recoil"
-import { productState } from "../components/Atom.js"
+import { productState, searchState, addPorductFormState, productDetailState, isBarsState, isLoggedInState, findMatchState } from "../components/Atom.js"
 import { url, shopId } from "../scripts/Constant.js"
-import { searchState } from "../components/Atom.js"
-import { addPorductFormState } from "../components/Atom.js"
+import { NavLink } from "react-router-dom"
+import DeleteProduct from "../components/DeleteProduct.jsx"
 
 const Products = () => {
 	const [productCard, setProductCard] = useRecoilState(productState)
 	const [search, setSearch] = useRecoilState(searchState)
-	const [findMatch, setFindMatch] = useState([])
+	const [findMatch, setFindMatch] = useRecoilState(findMatchState)
 	const [isAddFormVisivible, setIsAddFormVisible] = useRecoilState(addPorductFormState)
+	const [isDetailVisible, setIsDetailVisible] = useRecoilState(productDetailState)
+	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
+	const [isLoggedIn, setIsloggedIn] = useRecoilState(isLoggedInState)
 
 	useEffect(() => {
 		async function fetchItem() {
@@ -33,15 +36,19 @@ const Products = () => {
 		console.log('NewMatch', newMatch)
 	}, [search])
 
-	if (isAddFormVisivible != true) {
+	const handldeProductDetail = () => {
+		setIsDetailVisible(true)
+		setFilterBar(false)
+	}
 
+	if (!isAddFormVisivible && isLoggedIn) {
 		return (
 			<main>
 				<div className="centering-grid">
 					<ul className="card-grid">
 						{findMatch.length > 0 ? (
 							findMatch.map((item) => (
-								<li className="card-container" key={item.id}>
+								<NavLink to={'/products/'}><li className="card-container" key={item.id} onClick={handldeProductDetail}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>
@@ -49,11 +56,11 @@ const Products = () => {
 										<h3 className="card-name">{item.name}</h3>
 										<p className="card-price">{item.price} kr</p>
 									</div>
-								</li>
+								</li></NavLink>
 							))
 						) : (
 							productCard.map((item) => (
-								<li className="card-container" key={item.id}>
+								<NavLink to={'/products/'}><li className="card-container" key={item.id} onClick={handldeProductDetail}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>
@@ -61,7 +68,7 @@ const Products = () => {
 										<h3 className="card-name">{item.name}</h3>
 										<p className="card-price">{item.price} kr</p>
 									</div>
-								</li>
+								</li></NavLink>
 							))
 						)
 						}
@@ -70,9 +77,12 @@ const Products = () => {
 			</main>
 		)
 	}
-	else {
-		<>
-		</>
+	else if (!isAddFormVisivible && !isLoggedIn) {
+		return (
+			<>
+			<DeleteProduct />
+			</>
+		)
 	}
 }
 export default Products

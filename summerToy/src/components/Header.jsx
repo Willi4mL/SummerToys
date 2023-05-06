@@ -25,6 +25,7 @@ const Header = () => {
 	const LogOut = () => {
 		setIsloggedIn(true)
 		setFilterBar(true)
+		setIsAddFormVisible(false)
 	}
 
 	if (isLoggedIn) {
