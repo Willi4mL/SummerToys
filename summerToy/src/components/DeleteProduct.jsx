@@ -24,12 +24,12 @@ const DeleteProduct = () => {
 						<NavLink to={'/products/'}><li className="card-container" key={item.id}>
 							<div className="card-img--position">
 								<img className="card-img" src={item.picture} alt={item.name} />
-								<button className="delete-card" onClick={() => handleDelete(item.id)}>Ta bort</button>
 							</div>
 							<div className="card-text--position">
 								<h3 className="card-name">{item.name}</h3>
 								<p className="card-price">{item.price} kr</p>
 							</div>
+								<button className="delete-card" onClick={() => handleDelete(item.id)}>Ta bort</button>
 						</li></NavLink>
 					))
 				) : (
@@ -37,12 +37,12 @@ const DeleteProduct = () => {
 						<NavLink to={'/products/'}><li className="card-container" key={item.id}>
 							<div className="card-img--position">
 								<img className="card-img" src={item.picture} alt={item.name} />
-								<button className="delete-card" onClick={() => handleDelete(item.id)}>Ta bort</button>
 							</div>
 							<div className="card-text--position">
 								<h3 className="card-name">{item.name}</h3>
 								<p className="card-price">{item.price} kr</p>
 							</div>
+								<button className="delete-card" onClick={() => handleDelete(item.id)}>Ta bort</button>
 						</li></NavLink>
 					))
 				)

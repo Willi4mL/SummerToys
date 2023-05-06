@@ -47,7 +47,7 @@ const Header = () => {
 				<div className="empty-space">
 					<p className="header-login" onClick={LogOut}><NavLink to='products'>Logga ut</NavLink></p>
 				</div>
-				<h1 className="header-heading"><NavLink to='products/admin' onClick={handleClose}>Jump</NavLink></h1>
+				<h1 className="header-heading"><NavLink to='/admin' onClick={handleClose}>Jump</NavLink></h1>
 				<div className="empty-space">
 					<img className="header-icon" src="/images/add.png" alt='add object' onClick={handleAddObject} />
 				</div>

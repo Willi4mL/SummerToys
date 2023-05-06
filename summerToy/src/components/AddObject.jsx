@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { addPorductFormState, productState } from "./Atom"
+import { addPorductFormState, productState, findMatchState } from "./Atom"
 import { useRecoilState } from "recoil"
 
 const AddObject = () => {
@@ -9,6 +9,7 @@ const AddObject = () => {
 	const [description, setDescripton] = useState('')
 	const [productCard, setProductCard] = useRecoilState(productState)
 	const [isAddFormVisivible, setIsAddFormVisible] = useRecoilState(addPorductFormState)
+	const [findMatch, setFindMatch] = useRecoilState(findMatchState)
 
 	const newItem = [
 		...productCard,
@@ -18,7 +19,7 @@ const AddObject = () => {
 			picture,
 			description,
 			id: productCard.length + 1
-		}
+		},
 	]
 
 	const handleName = (e) => {
@@ -39,6 +40,7 @@ const AddObject = () => {
 
 	const handleSubmit = () => {
 		setProductCard([...newItem])
+		setFindMatch([...newItem])
 		console.log(productCard)
 		console.log(newItem)
 	}

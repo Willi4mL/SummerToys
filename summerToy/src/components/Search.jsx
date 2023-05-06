@@ -22,10 +22,5 @@ const Search = () => {
 			</div>
 		)
 	}
-	else {
-		return (
-			<></>
-		)
-	}
 }
 export default Search

@@ -23,8 +23,12 @@ const router = createHashRouter([
 				],
 			},
 			{
+				path: 'products/:id',
+				element: <ProductDetail />
+			},
+			{
 				path: 'cart',
-				element: <Cart />,
+				element: <Cart />
 			},
 			{
 				path: '*',

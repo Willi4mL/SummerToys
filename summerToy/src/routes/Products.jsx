@@ -39,6 +39,7 @@ const Products = () => {
 	const handldeProductDetail = () => {
 		setIsDetailVisible(true)
 		setFilterBar(false)
+
 	}
 
 	if (!isAddFormVisivible && isLoggedIn) {
@@ -48,7 +49,7 @@ const Products = () => {
 					<ul className="card-grid">
 						{findMatch.length > 0 ? (
 							findMatch.map((item) => (
-								<NavLink to={'/products/'}><li className="card-container" key={item.id} onClick={handldeProductDetail}>
+								<NavLink to={'products/' + item.id}><li className="card-container" key={item.id} onClick={handldeProductDetail}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>
@@ -60,7 +61,7 @@ const Products = () => {
 							))
 						) : (
 							productCard.map((item) => (
-								<NavLink to={'/products/'}><li className="card-container" key={item.id} onClick={handldeProductDetail}>
+								<NavLink to={'products/' + item.id}><li className="card-container" key={item.id} onClick={handldeProductDetail}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>
