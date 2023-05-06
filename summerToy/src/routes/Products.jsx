@@ -24,7 +24,7 @@ const Products = () => {
 				console.log('Problem with fetching', error)
 			}
 		}
-		console.log('inside productCard', productCard)
+		console.log('Inne i fetchen')
 		fetchItem()
 	}, [])
 
@@ -33,7 +33,7 @@ const Products = () => {
 			product.name.includes(search))
 
 		setFindMatch(newMatch)
-		console.log('NewMatch', newMatch)
+		console.log('useEffect', newMatch);
 	}, [search])
 
 	const handldeProductDetail = () => {

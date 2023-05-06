@@ -1,17 +1,19 @@
 import { useRecoilState } from "recoil"
-import { findMatchState, isBarsState, productState } from "./Atom"
+import { findMatchState, productState } from "./Atom"
 import { NavLink } from "react-router-dom"
 import { useCallback } from "react"
 
-const DeleteProduct = ({ productListUpdated }) => {
+const DeleteProduct = () => {
 	const [productCard, setProductCard] = useRecoilState(productState)
 	const [findMatch, setFindMatch] = useRecoilState(findMatchState)
-	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
 
 	const handleDelete = useCallback((id) => {
 		const updatedProductList = productCard.filter((product) => product.id !== id)
 		setProductCard(updatedProductList)
-	},[productCard, setProductCard])
+
+		const updatedFindList = findMatch.filter((product) => product.id !== id)
+		setFindMatch(updatedFindList)
+	},[productCard])
 
 	return (
 		<main>

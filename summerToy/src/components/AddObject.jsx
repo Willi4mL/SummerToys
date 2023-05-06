@@ -74,7 +74,7 @@ const AddObject = () => {
 							value={description}
 							onChange={handleDescription}>
 						</input>
-						
+
 						<button className="add-product-button"
 							onClick={handleSubmit}>Lägg till</button>
 						{/* <button className="add-product-button" onClick={onClose}>Avbryt</button> */}
