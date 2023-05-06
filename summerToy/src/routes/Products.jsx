@@ -15,6 +15,7 @@ const Products = () => {
 	const [isLoggedIn, setIsloggedIn] = useRecoilState(isLoggedInState)
 
 	useEffect(() => {
+		let isMounted = true
 		async function fetchItem() {
 			try {
 				const response = await fetch(url + '?action=get-products&shopid=' + shopId)
@@ -24,9 +25,16 @@ const Products = () => {
 				console.log('Problem with fetching', error)
 			}
 		}
-		console.log('Inne i fetchen')
-		fetchItem()
-	}, [])
+
+		if(!productCard.length){
+
+			console.log('Inne i fetchen')
+			fetchItem()
+		}
+		return () => {
+			isMounted = false
+		}
+	}, [productCard.length, shopId])
 
 	useEffect(() => {
 		const newMatch = productCard.filter((product) =>
@@ -81,7 +89,7 @@ const Products = () => {
 	else if (!isAddFormVisivible && !isLoggedIn) {
 		return (
 			<>
-			<DeleteProduct />
+				<DeleteProduct />
 			</>
 		)
 	}

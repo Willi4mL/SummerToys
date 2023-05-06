@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { addPorductFormState, productState, findMatchState } from "./Atom"
 import { useRecoilState } from "recoil"
+import { shopId } from "../scripts/Constant"
 
 const AddObject = () => {
 	const [name, setName] = useState('')
@@ -39,8 +40,8 @@ const AddObject = () => {
 	}
 
 	const handleSubmit = () => {
-		setProductCard([...newItem])
-		setFindMatch([...newItem])
+		setProductCard(newItem)
+		setFindMatch(newItem)
 		console.log(productCard)
 		console.log(newItem)
 	}
