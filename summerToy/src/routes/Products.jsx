@@ -37,7 +37,7 @@ const Products = () => {
 
 	useEffect(() => {
 		const newMatch = productCard.filter((product) =>
-			product.name.includes(search))
+			product.name.toLowerCase().includes(search.toLowerCase()))
 
 		setFindMatch(newMatch)
 		console.log('useEffect', newMatch);
