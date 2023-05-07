@@ -36,6 +36,6 @@ export const findMatchState = atom({
 })
 
 export const productDetailState = atom({
-	key: 'productDetail.State',
-	default: false
+	key: 'productDetailState',
+	default: []
 })

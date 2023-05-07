@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { addPorductFormState, productState, findMatchState } from "./Atom"
 import { useRecoilState } from "recoil"
-import { shopId } from "../scripts/Constant"
+import { useLocation } from "react-router-dom"
 
 const AddObject = () => {
 	const [name, setName] = useState('')
@@ -50,8 +50,10 @@ const AddObject = () => {
 		console.log('Efter handleSubmit', productCard)
 	}, [productCard])
 
-	if (isAddFormVisivible) {
+	const routeLocation = useLocation()
+	const isProductsRoute = routeLocation.pathname === '/products'
 
+	if (isAddFormVisivible && !isProductsRoute) {
 		return (
 			<main>
 				<h2 className="add-product-heading">Lägg till produkt</h2>
@@ -80,7 +82,6 @@ const AddObject = () => {
 
 						<button className="add-product-button"
 							onClick={handleSubmit}>Lägg till</button>
-						{/* <button className="add-product-button" onClick={onClose}>Avbryt</button> */}
 					</form>
 				</div>
 			</main>

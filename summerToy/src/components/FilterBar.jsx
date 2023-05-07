@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil"
 import { isBarsState, findMatchState, productState } from "./Atom"
 import { useState } from "react"
+import { useLocation } from "react-router-dom"
 
 const FilterBar = () => {
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
@@ -37,7 +38,10 @@ const FilterBar = () => {
 		setFindMatch([...findMatch].sort((a, b) => a.price - b.price))
 	}
 
-	if (isFilterBar)
+	const routeLocation = useLocation()
+	const isProductsRoute = routeLocation.pathname === '/products'
+
+	if (isFilterBar || isProductsRoute)
 		return (
 			<div className="filter-container">
 				<div className="flex-container">

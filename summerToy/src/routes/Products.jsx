@@ -13,6 +13,7 @@ const Products = () => {
 	const [isDetailVisible, setIsDetailVisible] = useRecoilState(productDetailState)
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
 	const [isLoggedIn, setIsloggedIn] = useRecoilState(isLoggedInState)
+	const [selectedProduct, setSelectedProduct] = useRecoilState(productDetailState)
 
 	useEffect(() => {
 		let isMounted = true
@@ -27,8 +28,6 @@ const Products = () => {
 		}
 
 		if(!productCard.length){
-
-			console.log('Inne i fetchen')
 			fetchItem()
 		}
 		return () => {
@@ -44,11 +43,16 @@ const Products = () => {
 		console.log('useEffect', newMatch);
 	}, [search])
 
-	const handldeProductDetail = () => {
+	const handldeProductDetail = (item) => {
+		console.log('Clicked item', item)
 		setIsDetailVisible(true)
 		setFilterBar(false)
-
+		setSelectedProduct(item)
 	}
+
+	useEffect(() => {
+		console.log('Selected item from atom', selectedProduct);
+	},[selectedProduct])
 
 	if (!isAddFormVisivible && isLoggedIn) {
 		return (
@@ -57,7 +61,7 @@ const Products = () => {
 					<ul className="card-grid">
 						{findMatch.length > 0 ? (
 							findMatch.map((item) => (
-								<NavLink to={'products/' + item.id}><li className="card-container" key={item.id} onClick={handldeProductDetail}>
+								<NavLink to={'products/' + item.id}><li className="card-container" key={item.id} onClick={() => handldeProductDetail(item)}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>
@@ -69,7 +73,7 @@ const Products = () => {
 							))
 						) : (
 							productCard.map((item) => (
-								<NavLink to={'products/' + item.id}><li className="card-container" key={item.id} onClick={handldeProductDetail}>
+								<NavLink to={'products/' + item.id}><li className="card-container" key={item.id} onClick={() => handldeProductDetail(item)}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>

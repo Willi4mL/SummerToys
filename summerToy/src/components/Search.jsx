@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil"
 import { isBarsState } from "./Atom"
 import { searchState } from "./Atom"
+import { useLocation } from "react-router-dom"
 
 const Search = () => {
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
@@ -10,7 +11,10 @@ const Search = () => {
 		setSearch(event.target.value.toLowerCase())
 	}
 
-	if (isFilterBar) {
+	const routeLocation = useLocation()
+	const isProductsRoute = routeLocation.pathname === '/products'
+
+	if (isFilterBar || isProductsRoute) {
 		return (
 			<div className="search-container">
 				<input className="search-input"
