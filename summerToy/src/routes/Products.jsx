@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useRecoilState } from "recoil"
 import { productState, searchState, addPorductFormState, productDetailState, isBarsState, isLoggedInState, findMatchState } from "../components/Atom.js"
 import { url, shopId } from "../scripts/Constant.js"
@@ -37,7 +37,7 @@ const Products = () => {
 
 	useEffect(() => {
 		const newMatch = productCard.filter((product) =>
-			product.name.toLowerCase().includes(search.toLowerCase()))
+			product.name.toLowerCase().includes(search))
 
 		setFindMatch(newMatch)
 		console.log('useEffect', newMatch);

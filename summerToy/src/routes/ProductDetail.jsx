@@ -1,9 +1,15 @@
-import { productDetailState } from "../components/Atom"
+import { productDetailState, cartState } from "../components/Atom"
 import { useRecoilState } from "recoil"
 
 const ProductDetail = () => {
 	const [selectedProduct, setSelectedProduct] = useRecoilState(productDetailState)
 	const { name, price, picture, description } = selectedProduct
+	const [cart, setCart] = useRecoilState(cartState)
+
+	const handleToCart = (item) => {
+		console.log('Send to cart', item)
+		setCart([...cart, selectedProduct])
+	}
 
 	return (
 		<div className="view-detail">
@@ -16,7 +22,7 @@ const ProductDetail = () => {
 						<h3 className="card-name">{name}</h3>
 						<p className="card-price">{price} kr</p>
 						<p className="card-description">{description}</p>
-						<button className="add-cart-button">Lägg i varukorg</button>
+						<button className="add-cart-button" onClick={() => handleToCart(selectedProduct)}>Lägg i varukorg</button>
 					</div>
 				</div>
 			</div>

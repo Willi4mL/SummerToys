@@ -36,7 +36,7 @@ const Header = () => {
 				</div>
 				<NavLink to='products'><h1 className="header-heading" onClick={handleClose}>Jump</h1></NavLink>
 				<div className="empty-space">
-					<img className="header-icon" src="/images/cart.png" alt='add to cart' onClick={() => { setFilterBar(false) }} />
+					<NavLink to='cart'><img className="header-icon" src="/images/cart.png" alt='add to cart' onClick={() => { setFilterBar(false) }} /></NavLink>
 				</div>
 			</header>
 		)
