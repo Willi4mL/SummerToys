@@ -14,10 +14,10 @@
 	flex-grow: 1;
 	height: 20em;
 	border-radius: 0.8em;
-	border: 1px solid #CFCCCC;
+	border: 1px solid #cccecf;
 	box-shadow: 2px 3px 4px #00000025;
 	list-style-type: none;
-	margin: 0.2em;
+	margin: 3.5em 0;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -43,6 +43,28 @@
 	right: 0;
 }
 
+.delete-card {
+	position: absolute;
+	top: -27px;
+	right: 10px;
+	height:2em;
+	display: flex;
+	align-items: flex-end;
+	padding-bottom: 0.3em;
+	border-radius: 1em 1em 0 0;
+	border: none;
+	background-color: #1979e6;
+	color: #f3efef;
+	transition: all 0.6s;
+}
+
+.delete-card:hover {
+	cursor: pointer;
+	height:3em;
+	top: -40px;
+	background-color: #1565c0;
+}
+
 @media (min-width: 400px) {
 	.card-container {
 		width: 350px;
@@ -57,6 +79,7 @@
 
 	.card-container {
 		grid-column: 2;
+		margin: 2em 0.5em;
 	}
 }
 

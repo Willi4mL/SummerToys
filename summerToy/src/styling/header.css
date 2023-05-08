@@ -6,7 +6,22 @@
 }
 
 .header-login {
+	padding: 0.5em;
 	font-size: 1.2em;
+	border-radius: 0.5em;
+	text-decoration: none;
+	border: 0.5px solid #2691fa;
+	background-color: #ffffff;
+	color: #1979e6;
+	transition: all 0.6s;
+	box-shadow: 2px 3px 4px #00000025;
+}
+
+.header-login:hover {
+	background-color: #f6fafd;
+	border: 1px solid #217bd4;
+	transform: scale(0.95);
+	box-shadow: 1px 2px 3px #00000050;
 }
 
 .header-heading {
@@ -20,11 +35,38 @@
 .empty-space {
 	display: flex;
 	justify-content: center;
-	width: 68.8px;
+	width: 90px;
+}
+
+.plus {
+	width: 1.3em;
+	font-size: 2em;
+	border-radius: 50em;
+	border: none;
+	background-color: #1979e6;
+	color: #f3efef;
+	transition: all 0.6s;
+	box-shadow: 2px 3px 4px #00000025;
+	display: flex;
+	justify-content: center;
+}
+
+.empty-space > .add-text {
+	width: 10em;
+	padding: 0.5em;
+	font-size: 1.2em;
+	border-radius: 0.5em;
 }
 
 .header-login:hover,
 .header-heading:hover,
 .header-icon:hover {
 	cursor: pointer;
+}
+
+.plus:hover {
+	cursor: pointer;
+	background-color: #1565c0;
+	transform: scale(0.95);
+	box-shadow: 1px 2px 3px #00000050;
 }

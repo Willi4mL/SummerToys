@@ -3,7 +3,7 @@ const ToTop = () => {
 		document.documentElement.scrollTop = 0;
 	}
 	return (
-		<button className="to-top" onClick={scrollTop}>Top</button>
+		<button className="to-top" onClick={scrollTop}>^</button>
 	)
 }
 export default ToTop
