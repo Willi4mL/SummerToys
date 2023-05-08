@@ -1,13 +1,25 @@
 import { useRecoilState } from "recoil"
 import { cartState } from "../components/Atom"
+import { useEffect, useState } from "react";
 
 const Cart = () => {
 	const [cart, setCart] = useRecoilState(cartState)
+	const [amount, setAmount] = useState(1)
+	const [total, setTotal] = useState(0)
 
 	const handleDeleteCart = (id) => {
 		const updatedCartList = cart.filter((product) => product.id !== id)
 		setCart(updatedCartList)
 	}
+
+	const handleAmountInput = (e) => {
+		setAmount(e.target.value)
+	}
+
+	useEffect(() => {
+			const newTotal = cart.reduce((acc, product) => acc + product.price * amount, 0)
+			setTotal(newTotal)
+	},[cart, amount])
 
 	return (
 		<main>
@@ -26,7 +38,7 @@ const Cart = () => {
 								<p className="cart-price">{product.price} kr</p>
 								<div className="amount-container">
 									<p className="amount-text">Antal: </p>
-									<input type='number' className="cart-amout"></input>
+									<input type='number' className="cart-amout" value={amount} onChange={handleAmountInput}></input>
 								</div>
 							</div>
 						</div>
@@ -35,6 +47,7 @@ const Cart = () => {
 			) : (
 				<p className="empty-cart">Kundvagnen är tom</p>
 			)}
+			<p className="total">Totalsumma: {total} kr</p>
 		</main>
 	);
 };

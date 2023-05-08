@@ -76,6 +76,10 @@
 margin-top: 0.1em;
 }
 
+.total {
+	margin-top: 1em;
+}
+
 .empty-cart {
 	margin-top: 3em;
 	display: flex;
