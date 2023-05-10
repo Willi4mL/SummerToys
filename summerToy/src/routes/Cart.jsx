@@ -1,9 +1,10 @@
 import { useRecoilState } from "recoil"
-import { cartState } from "../components/Atom"
+import { cartCountOneState, cartState } from "../components/Atom"
 import { useEffect, useState } from "react";
 
 const Cart = () => {
 	const [cart, setCart] = useRecoilState(cartState)
+	const [countOne, setCountOne] = useRecoilState(cartCountOneState)
 	const [amount, setAmount] = useState(1)
 	const [total, setTotal] = useState(0)
 
@@ -12,14 +13,18 @@ const Cart = () => {
 		setCart(updatedCartList)
 	}
 
-	const handleAmountInput = (e) => {
-		setAmount(e.target.value)
+	const handleAmountInput = (id, e) => {
+		const newCount = {...countOne,[id]: e.target.value}
+		setCountOne(newCount)
 	}
 
 	useEffect(() => {
-			const newTotal = cart.reduce((acc, product) => acc + product.price * amount, 0)
+			const newTotal = cart.reduce((acc, product) => {
+				const quantity = countOne[product.id] || 1
+				return acc + product.price * quantity
+			}, 0)
 			setTotal(newTotal)
-	},[cart, amount])
+	},[cart, countOne])
 
 	return (
 		<main>
@@ -38,7 +43,7 @@ const Cart = () => {
 								<p className="cart-price">{product.price} kr</p>
 								<div className="amount-container">
 									<p className="amount-text">Antal: </p>
-									<input type='number' className="cart-amout" value={amount} onChange={handleAmountInput}></input>
+									<input type='number' className="cart-amout" value={countOne[product.id] || 1} onChange={(e) => handleAmountInput(product.id, e)}></input>
 								</div>
 							</div>
 						</div>
@@ -49,6 +54,6 @@ const Cart = () => {
 			)}
 			<p className="total">Totalsumma: {total} kr</p>
 		</main>
-	);
-};
+	)
+}
 export default Cart

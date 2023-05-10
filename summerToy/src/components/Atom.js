@@ -44,3 +44,8 @@ export const cartState = atom({
 	key: 'cartState',
 	default: []
 })
+
+export const cartCountOneState = atom({
+	key: 'cartCountOneState',
+	default: {}
+})

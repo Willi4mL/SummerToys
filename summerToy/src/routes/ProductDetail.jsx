@@ -7,8 +7,11 @@ const ProductDetail = () => {
 	const [cart, setCart] = useRecoilState(cartState)
 
 	const handleToCart = (item) => {
-		console.log('Send to cart', item)
-		setCart([...cart, selectedProduct])
+		const isProductInCart = cart.some((product) => product.id === item.id)
+		if(!isProductInCart) {
+			console.log('Send to cart', item)
+			setCart([...cart, selectedProduct])
+		} 
 	}
 
 	return (
