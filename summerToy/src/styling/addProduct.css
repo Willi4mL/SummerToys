@@ -100,17 +100,21 @@
 	justify-self: center;
 	justify-content: center;
 	align-items: center;
+	border: none;
+	padding: 0.5em;
+	font-size: 1em;
 	width: 6em;
-	height: 2em;
-	border: 1px solid #CFCCCC;
+	background-color: #1979e6;
+	color: #f3efef;
+	transition: all 0.6s;
 	box-shadow: 2px 3px 4px #00000025;
-	transition: all 0.4s;
+	display: flex;
+	justify-content: center;
 }
 
 .add-product-button:hover {
 	cursor: pointer;
-	font-size: 0.9em;
-	font-weight: bold;
-	box-shadow: 2px 3px 6px #00000025;
-	background-color: rgb(120, 230, 170);
+	background-color: #1565c0;
+	transform: scale(0.95);
+	box-shadow: 1px 2px 3px #00000050;
 }

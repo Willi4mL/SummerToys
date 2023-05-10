@@ -25,7 +25,7 @@ const LogIn = () => {
 					<input className="login-input-name"></input>
 					<p className="password">Lösenord:</p>
 					<input className="login-input-password"></input>
-					<button className="login-button" onClick={handleLogIn}><NavLink to='/admin' style={{ textDecoration: "none" }}> Logga in </NavLink></button>
+					<button className="login-button" onClick={handleLogIn}><NavLink to='/admin' style={{ textDecoration: "none", color: '#f3efef' }}> Logga in </NavLink></button>
 				</form>
 			</div>}
 		</div>

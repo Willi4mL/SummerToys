@@ -24,6 +24,7 @@
 
 .card-description {
 	margin: 0.5em;
+	margin-bottom: 2em;
 }
 
 .card-text--position {
@@ -33,6 +34,31 @@
 	bottom: 2em;
 	left: 0;
 	right: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.add-cart-button {
+	width: 8.5em;
+	font-size: 1em;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	border: none;
+	background-color: #1979e6;
+	color: #f3efef;
+	transition: all 0.6s;
+	box-shadow: 2px 3px 4px #00000025;
+	display: flex;
+	justify-content: center;
+	align-self: flex-end;
+	margin-right: 1em;
+}
+
+.add-cart-button:hover {
+	cursor: pointer;
+	background-color: #1565c0;
+	transform: scale(0.95);
+	box-shadow: 1px 2px 3px #00000050;
 }
 
 @media (min-width: 400px) {

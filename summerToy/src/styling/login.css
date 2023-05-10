@@ -83,27 +83,23 @@
 }
 
 .login-button {
+	padding: 0.5em;
 	grid-column: 2;
 	grid-row: 4;
 	margin-bottom: 1em;
-	border-radius: 0.5em;
-	display: flex;
-	justify-self: center;
-	justify-content: center;
-	align-items: center;
-	width: 6em;
-	height: 2em;
-	border: 1px solid #CFCCCC;
+	border-radius: 50em;
+	border: none;
+	background-color: #1979e6;
+	color: #f3efef;
+	transition: all 0.6s;
 	box-shadow: 2px 3px 4px #00000025;
-	transition: all 0.4s;
 }
 
 .login-button:hover {
 	cursor: pointer;
-	font-size: 0.9em;
-	font-weight: bold;
-	box-shadow: 2px 3px 6px #00000025;
-	background-color: rgb(120, 230, 170);
+	background-color: #1565c0;
+	transform: scale(0.95);
+	box-shadow: 1px 2px 3px #00000050;
 }
 
 .login-input-password,

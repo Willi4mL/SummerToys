@@ -9,13 +9,11 @@ const DeleteProduct = () => {
 
 	const handleDelete = useCallback((id) => {
 		const updatedProductList = productCard.filter((product) => product.id !== id)
-
 		setProductCard(updatedProductList)
-
 
 		const updatedFindList = findMatch.filter((product) => product.id !== id)
 		setFindMatch(updatedFindList)
-	}, [productCard])
+	}, [productCard, findMatch])
 
 	return (
 		<main>
@@ -44,7 +42,7 @@ const DeleteProduct = () => {
 									<h3 className="card-name">{item.name}</h3>
 									<p className="card-price">{item.price} kr</p>
 								</div>
-								<button className="delete-card" onClick={handleDelete}>Ta bort</button>
+								<button className="delete-card" onClick={() => handleDelete(item.id)}>Ta bort</button>
 							</li></NavLink>
 						))
 					)

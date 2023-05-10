@@ -62,7 +62,7 @@ const Header = () => {
 		return (
 			<header className="header-container">
 				<div className="empty-space">
-					<p className="header-login" onClick={LogOut}><NavLink to='products' style={{ textDecoration: "none" }}>Logga ut</NavLink></p>
+					<p className="header-login" onClick={LogOut}><NavLink to='products' style={{ textDecoration: "none", color: '#1979e6'}}>Logga ut</NavLink></p>
 				</div>
 				<h1 className="header-heading"><NavLink to='/admin' onClick={handleClose} style={{ textDecoration: "none" }}>Jump</NavLink></h1>
 				<div className="empty-space">
