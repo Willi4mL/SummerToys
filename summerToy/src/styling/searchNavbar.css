@@ -64,7 +64,8 @@
 .sort-name {
 	position: absolute;
 	top: 2em;
-	width: 6em;
+	left: -0.5em;
+	width: 5.5em;
 	height:4em;
 	border-radius: 0 0 0.6em 0.6em;
 	border: 1px solid #CFCCCC;
@@ -77,7 +78,7 @@
 	position: absolute;
 	left: 0em;
 	top: 2em;
-	width: 6em;
+	width: 5.3em;
 	height:4em;
 	border-radius: 0 0.6em 0.6em 0.6em;
 	border: 1px solid #CFCCCC;
@@ -86,14 +87,16 @@
 	z-index: 2;
 }
 
-.sort-name-ul, 
-.sort-price-ul {
-	list-style-type: none;
-	padding: 0;
+.sort-price-low:hover,
+.sort-price-high:hover,
+.sort-name-high:hover,
+.sort-name-low:hover {
+	background-color: #5ba9f8;
+	color: #f3efef;
 }
 
-.sort-name-li,
-.sort-price-li {
+.sort-name-p,
+.sort-price-p {
 	display: flex;
 	justify-content: center;
 	margin-top: 0.5em;

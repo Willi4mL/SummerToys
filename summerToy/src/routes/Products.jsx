@@ -61,7 +61,7 @@ const Products = () => {
 					<ul className="card-grid">
 						{findMatch.length > 0 ? (
 							findMatch.map((item) => (
-								<NavLink to={'products/' + item.id}><li className="card-container" key={item.id} onClick={() => handldeProductDetail(item)}>
+								<NavLink to={'products/' + item.id} key={item.id}><li className="card-container" onClick={() => handldeProductDetail(item)}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>
@@ -73,7 +73,7 @@ const Products = () => {
 							))
 						) : (
 							productCard.map((item) => (
-								<NavLink to={'products/' + item.id}><li className="card-container" key={item.id} onClick={() => handldeProductDetail(item)}>
+								<NavLink to={'products/' + item.id} key={item.id}><li className="card-container" onClick={() => handldeProductDetail(item)}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>

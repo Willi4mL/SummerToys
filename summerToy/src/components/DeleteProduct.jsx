@@ -21,7 +21,7 @@ const DeleteProduct = () => {
 				<ul className="card-grid">
 					{findMatch.length > 0 ? (
 						findMatch.map((item) => (
-							<NavLink to={'/products/'}><li className="card-container" key={item.id}>
+							<NavLink to={'/products/'} key={item.id}><li className="card-container">
 								<div className="card-img--position">
 									<img className="card-img" src={item.picture} alt={item.name} />
 								</div>
@@ -34,7 +34,7 @@ const DeleteProduct = () => {
 						))
 					) : (
 						productCard.map((item) => (
-							<NavLink to={'/products/'}><li className="card-container" key={item.id}>
+							<NavLink to={'/products/'} key={item.id}><li className="card-container">
 								<div className="card-img--position">
 									<img className="card-img" src={item.picture} alt={item.name} />
 								</div>

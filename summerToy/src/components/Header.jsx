@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
-import { useRecoilState } from "recoil"
-import { isLoggedInState, loginState, isBarsState, addPorductFormState } from "./Atom"
+import { useRecoilState, useRecoilValue } from "recoil"
+import { isLoggedInState, loginState, isBarsState, addPorductFormState, cartCountOneState, cartState } from "./Atom"
 import { useEffect, useState } from "react"
 
 const Header = () => {
@@ -9,6 +9,10 @@ const Header = () => {
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
 	const [isAddFormVisivible, setIsAddFormVisible] = useRecoilState(addPorductFormState)
 	const [isPlus, setIsPlus] = useState(true)
+	const [countOne, setCountOne] = useRecoilState(cartCountOneState)
+
+	const cart = useRecoilValue(cartState)
+	const countIcon = cart.length
 
 	const handleAddObject = () => {
 		setIsAddFormVisible(true)
@@ -53,7 +57,8 @@ const Header = () => {
 				</div>
 				<NavLink to='products' style={{ textDecoration: "none" }}><h1 className="header-heading" onClick={handleClose}>Jump</h1></NavLink>
 				<div className="empty-space">
-					<NavLink to='cart'><img className="header-icon" src="/images/cart.png" alt='add to cart' onClick={() => { setFilterBar(false) }} /></NavLink>
+					<NavLink to='cart'><img className="header-icon" src="/images/blueCart.png" alt='add to cart' onClick={() => { setFilterBar(false) }} /></NavLink>
+					<p className="count-cart">{countIcon}</p>
 				</div>
 			</header>
 		)

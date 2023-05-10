@@ -50,20 +50,24 @@ const FilterBar = () => {
 						<p className="name">Namn</p>
 						<img className="arrow" src="/images/arrow.png" alt="dropdown menu" />
 						{isNameVisible && <div className="sort-name">
-							<ul className="sort-name-ul">
-								<li className="sort-name-li" onClick={handleSortHighName}>A-Ö</li>
-								<li className="sort-name-li" onClick={handleSortLowName}>Ö-A</li>
-							</ul>
+							<div className="sort-name-high">
+								<p className="sort-name-p" onClick={handleSortHighName}>A-Ö</p>
+								</div>
+							<div className="sort-name-low">
+								<p className="sort-name-p" onClick={handleSortLowName}>Ö-A</p>
+							</div>
 						</div>}
 					</label>
 					<label className="filter-label" onClick={togglePrice}>
 						<p className="price">Pris</p>
 						<img className="arrow" src="/images/arrow.png" alt="dropdown menu" />
 						{isPriceVisible && <div className="sort-price">
-							<ul className="sort-price-ul">
-								<li className="sort-price-li" onClick={handleSortHighPrice}>Stigande</li>
-								<li className="sort-price-li" onClick={handleSortLowPrice}>Fallande</li>
-							</ul>
+							<div className="sort-price-low">
+								<p className="sort-price-p" onClick={handleSortLowPrice}>Stigande</p>
+							</div>
+							<div className="sort-price-high">
+								<p className="sort-price-p" onClick={handleSortHighPrice}>Fallande</p>
+							</div>
 						</div>}
 					</label>
 				</div>

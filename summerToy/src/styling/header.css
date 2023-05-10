@@ -7,7 +7,8 @@
 
 .header-login {
 	padding: 0.5em;
-	font-size: 1.2em;
+	font-size: 1em;
+	width: 10em;
 	border-radius: 0.5em;
 	text-decoration: none;
 	border: 0.5px solid #2691fa;
@@ -29,13 +30,26 @@
 }
 
 .header-icon {
-	width: 2em;
+	width: 3em;
 }
 
 .empty-space {
 	display: flex;
 	justify-content: center;
-	width: 90px;
+	width: 80px;
+	position: relative;
+}
+
+.count-cart {
+	position: absolute;
+	right:15px;
+	background-color: #161616;
+	color: #f3efef;
+	padding: 0.2em;
+	width: 1.5em;
+	border-radius: 50em;
+	display: flex;
+	justify-content: center;
 }
 
 .plus {
@@ -69,4 +83,13 @@
 	background-color: #1565c0;
 	transform: scale(0.95);
 	box-shadow: 1px 2px 3px #00000050;
+}
+
+@media (min-width: 400px) {
+	.header-login {
+		font-size: 1.2em;
+	}
+	.empty-space {
+		width: 95px;
+	}
 }

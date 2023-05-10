@@ -1,10 +1,11 @@
-import { productDetailState, cartState } from "../components/Atom"
+import { productDetailState, cartState, cartCountOneState } from "../components/Atom"
 import { useRecoilState } from "recoil"
 
 const ProductDetail = () => {
 	const [selectedProduct, setSelectedProduct] = useRecoilState(productDetailState)
 	const { name, price, picture, description } = selectedProduct
 	const [cart, setCart] = useRecoilState(cartState)
+	const [countOne, setCountOne] = useRecoilState(cartCountOneState)
 
 	const handleToCart = (item) => {
 		const isProductInCart = cart.some((product) => product.id === item.id)
