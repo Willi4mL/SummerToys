@@ -12,7 +12,11 @@ const Header = () => {
 	const [countOne, setCountOne] = useRecoilState(cartCountOneState)
 
 	const cart = useRecoilValue(cartState)
-	const countIcon = cart.length
+
+	const countIcon = cart.reduce((a, product) => {
+		const quantity = countOne[product.id] || 1
+		return Number(a) + Number(quantity)
+	},0)
 
 	const handleAddObject = () => {
 		setIsAddFormVisible(true)

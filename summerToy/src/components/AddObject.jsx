@@ -66,6 +66,7 @@ const AddObject = () => {
 						</input>
 						<p className="add-product-price">Pris:</p>
 						<input className="add-product-price-input"
+							type="number"
 							value={price}
 							onChange={handlePrice}>
 						</input>
@@ -75,10 +76,10 @@ const AddObject = () => {
 							onChange={handlePicture}>
 						</input>
 						<p className="add-product-description">Description:</p>
-						<input className="add-product-description-input"
+						<textarea className="add-product-description-input"
 							value={description}
 							onChange={handleDescription}>
-						</input>
+						</textarea>
 
 						<button className="add-product-button"
 							onClick={handleSubmit}>Lägg till</button>

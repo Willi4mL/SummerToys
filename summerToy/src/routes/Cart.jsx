@@ -11,6 +11,7 @@ const Cart = () => {
 	const handleDeleteCart = (id) => {
 		const updatedCartList = cart.filter((product) => product.id !== id)
 		setCart(updatedCartList)
+		setCountOne(0)
 	}
 
 	const handleAmountInput = (id, e) => {

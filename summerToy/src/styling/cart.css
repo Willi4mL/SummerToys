@@ -78,7 +78,8 @@ margin-top: 0.1em;
 }
 
 .total {
-	margin-top: 1em;
+	margin-top: 5em;
+	margin-bottom: 15em;
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 1em;
