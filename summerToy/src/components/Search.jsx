@@ -8,7 +8,7 @@ const Search = () => {
 	const [search, setSearch] = useRecoilState(searchState)
 
 	const handleSearch = (event) => {
-		setSearch(event.target.value)
+		setSearch(event.target.value.toLowerCase())
 	}
 
 	const routeLocation = useLocation()

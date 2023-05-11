@@ -54,7 +54,6 @@ const AddObject = () => {
 	}
 
 	const handlePicture = (e) => {
-		
 		setPicture(e.target.value)
 		setInvalidAddPicture(isValidImg)
 		if (e.target.value === '') {

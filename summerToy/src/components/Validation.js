@@ -1,4 +1,5 @@
 const validChar = 'abcdefghijklmnopqrstuvwxyzåäö1234567890, '
+const validLetter = 'abcdefghijklmnopqrstuvwxyzåäö'
 
 function validateName(valid) {
 	for (let i = 0; i < valid.length; i++) {
@@ -22,4 +23,22 @@ function validUrl(addImg) {
 	return [true, ""]
 }
 
-export { validateName, validUrl }
+function validUsername(validName) {
+	const whiteSpace = /\s/
+	if (whiteSpace.test(validName)) {
+		return [false, "Godkänner ej mellanrum"]
+	}
+	for (let x = 0; x < validName.length; x++) {
+		let character = validName.charAt(x).toLowerCase()
+
+		if (!validLetter.includes(character)) {
+			return [false, 'Vänligen endast bokstäver.']
+		}
+	}
+	if(validName == 'admin') {
+		return [true, '']
+	}
+	return [false, 'Fel lösenord']
+}
+
+export { validateName, validUrl, validUsername }
