@@ -17,17 +17,17 @@ const router = createHashRouter([
 
 				children: [
 					{
-						path: 'admin',
+						path: '/admin',
 						element: <Admin />
 					},
 				],
 			},
 			{
-				path: 'products/:id',
+				path: '/products/:id',
 				element: <ProductDetail />
 			},
 			{
-				path: 'cart',
+				path: '/cart',
 				element: <Cart />
 			},
 			{

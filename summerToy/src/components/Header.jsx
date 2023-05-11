@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { useRecoilState, useRecoilValue } from "recoil"
-import { isLoggedInState, loginState, isBarsState, addPorductFormState, cartCountOneState, cartState } from "./Atom"
+import { isLoggedInState, loginState, isBarsState, addPorductFormState, cartCountOneState, cartState, addIconState } from "./Atom"
 import { useEffect, useState } from "react"
 
 const Header = () => {
@@ -8,7 +8,7 @@ const Header = () => {
 	const [isLoggedIn, setIsloggedIn] = useRecoilState(isLoggedInState)
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
 	const [isAddFormVisivible, setIsAddFormVisible] = useRecoilState(addPorductFormState)
-	const [isPlus, setIsPlus] = useState(true)
+	const [isPlus, setIsPlus] = useRecoilState(addIconState)
 	const [countOne, setCountOne] = useRecoilState(cartCountOneState)
 
 	const cart = useRecoilValue(cartState)
@@ -59,9 +59,9 @@ const Header = () => {
 				<div className="empty-space">
 					<p className="header-login" onClick={toggleLogIn}>Logga in</p>
 				</div>
-				<NavLink to='products' style={{ textDecoration: "none" }}><h1 className="header-heading" onClick={handleClose}>Jump</h1></NavLink>
+				<NavLink to='/products' style={{ textDecoration: "none" }}><h1 className="header-heading" onClick={handleClose}>Jump</h1></NavLink>
 				<div className="empty-space">
-					<NavLink to='cart'><img className="header-icon" src="/images/blueCart.png" alt='add to cart' onClick={() => { setFilterBar(false) }} /></NavLink>
+					<NavLink to='/cart'><img className="header-icon" src="/images/blueCart.png" alt='add to cart' onClick={() => { setFilterBar(false) }} /></NavLink>
 					<p className="count-cart">{countIcon}</p>
 				</div>
 			</header>
@@ -71,11 +71,11 @@ const Header = () => {
 		return (
 			<header className="header-container">
 				<div className="empty-space">
-					<p className="header-login" onClick={LogOut}><NavLink to='products' style={{ textDecoration: "none", color: '#1979e6'}}>Logga ut</NavLink></p>
+					<p className="header-login" onClick={LogOut}><NavLink to='/products' style={{ textDecoration: "none", color: '#1979e6'}}>Logga ut</NavLink></p>
 				</div>
 				<h1 className="header-heading"><NavLink to='/admin' onClick={handleClose} style={{ textDecoration: "none" }}>Jump</NavLink></h1>
 				<div className="empty-space">
-					{isPlus ? <p className="header-icon plus" onClick={handleAddObject}>+</p> : <p className="header-icon plus add-text" onClick={handleAddObject}>Lägg till</p> }
+					{!isAddFormVisivible && (isPlus ? <p className="header-icon plus" onClick={handleAddObject}>+</p> : <p className="header-icon plus add-text" onClick={handleAddObject}>Lägg till</p> )}
 				</div>
 			</header>
 		)

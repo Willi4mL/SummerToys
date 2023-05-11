@@ -19,13 +19,13 @@ const FilterBar = () => {
 	}
 
 	const handleSortHighName = () => {
-		setProductCard([...productCard].sort((a, b) => b.name.localeCompare(a.name)))
-		setFindMatch([...findMatch].sort((a, b) => b.name.localeCompare(a.name)))
+		setProductCard([...productCard].sort((a, b) => a.name.localeCompare(b.name)))
+		setFindMatch([...findMatch].sort((a, b) => a.name.localeCompare(b.name)))
 	}
 
 	const handleSortLowName = () => {
-		setProductCard([...productCard].sort((a, b) => a.name.localeCompare(b.name)))
-		setFindMatch([...findMatch].sort((a, b) => a.name.localeCompare(b.name)))
+		setProductCard([...productCard].sort((a, b) => b.name.localeCompare(a.name)))
+		setFindMatch([...findMatch].sort((a, b) => b.name.localeCompare(a.name)))
 	}
 
 	const handleSortHighPrice = () => {

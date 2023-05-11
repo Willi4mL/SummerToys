@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useRecoilState } from "recoil"
-import { productState, searchState, addPorductFormState, productDetailState, isBarsState, isLoggedInState, findMatchState } from "../components/Atom.js"
+import { productState, searchState, addPorductFormState, productDetailState, isBarsState, isLoggedInState, findMatchState, addIconState } from "../components/Atom.js"
 import { url, shopId } from "../scripts/Constant.js"
 import { NavLink } from "react-router-dom"
 import DeleteProduct from "../components/DeleteProduct.jsx"
@@ -14,6 +14,7 @@ const Products = () => {
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
 	const [isLoggedIn, setIsloggedIn] = useRecoilState(isLoggedInState)
 	const [selectedProduct, setSelectedProduct] = useRecoilState(productDetailState)
+	const [isPlus, setIsPlus] = useRecoilState(addIconState)
 
 	useEffect(() => {
 		let isMounted = true
@@ -37,7 +38,7 @@ const Products = () => {
 
 	useEffect(() => {
 		const newMatch = productCard.filter((product) =>
-			product.name.toLowerCase().includes(search))
+			product.name.toLowerCase().includes(search.toLowerCase()))
 
 		setFindMatch(newMatch)
 		console.log('useEffect', newMatch);
@@ -61,7 +62,7 @@ const Products = () => {
 					<ul className="card-grid">
 						{findMatch.length > 0 ? (
 							findMatch.map((item) => (
-								<NavLink to={'products/' + item.id} key={item.id}><li className="card-container" onClick={() => handldeProductDetail(item)}>
+								<NavLink to={'/products/' + item.id} key={item.id}><li className="card-container" onClick={() => handldeProductDetail(item)}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>
@@ -73,7 +74,7 @@ const Products = () => {
 							))
 						) : (
 							productCard.map((item) => (
-								<NavLink to={'products/' + item.id} key={item.id}><li className="card-container" onClick={() => handldeProductDetail(item)}>
+								<NavLink to={'/products/' + item.id} key={item.id}><li className="card-container" onClick={() => handldeProductDetail(item)}>
 									<div className="card-img--position">
 										<img className="card-img" src={item.picture} alt={item.name} />
 									</div>
