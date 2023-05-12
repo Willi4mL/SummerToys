@@ -3,6 +3,7 @@ import { isBarsState, loginState, isLoggedInState, productDetailState } from "./
 import { NavLink } from "react-router-dom"
 import { validUsername } from "./Validation"
 import { useState } from "react"
+import close from '../images/close.png'
 
 const LogIn = () => {
 	const [isVisibleLogIn, setIsvisibleLogIn] = useRecoilState(loginState)
@@ -61,7 +62,7 @@ const LogIn = () => {
 			{isVisibleLogIn && <div className="login-container">
 				<form className="login-form">
 					<h2 className="login-header">Logga in</h2>
-					<img className="close-icon" src="/images/close.png" alt='close' onClick={() => { setIsvisibleLogIn(false) }} />
+					<img className="close-icon" src={close} alt='close' onClick={() => { setIsvisibleLogIn(false) }} />
 					<p className="username">Användarnamn:</p>
 					<div className='username-container'>
 						<input className="login-input-name"

@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom"
 import { useRecoilState, useRecoilValue } from "recoil"
 import { isLoggedInState, loginState, isBarsState, addPorductFormState, cartCountOneState, cartState, addIconState } from "./Atom"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import bluCart from "../images/blueCart.png"
 
 const Header = () => {
 	const [isVisibleLogIn, setIsvisibleLogIn] = useRecoilState(loginState)
@@ -61,7 +62,7 @@ const Header = () => {
 				</div>
 				<NavLink to='/products' style={{ textDecoration: "none" }}><h1 className="header-heading" onClick={handleClose}>Jump</h1></NavLink>
 				<div className="empty-space">
-					<NavLink to='/cart'><img className="header-icon" src="/images/blueCart.png" alt='add to cart' onClick={() => { setFilterBar(false) }} /></NavLink>
+					<NavLink to='/cart'><img className="header-icon" src={bluCart} alt='add to cart' onClick={() => { setFilterBar(false) }} /></NavLink>
 					<p className="count-cart">{countIcon}</p>
 				</div>
 			</header>

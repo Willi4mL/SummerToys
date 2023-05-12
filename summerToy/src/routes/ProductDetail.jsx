@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { productDetailState, cartState, cartCountOneState } from "../components/Atom"
 import { useRecoilState } from "recoil"
 

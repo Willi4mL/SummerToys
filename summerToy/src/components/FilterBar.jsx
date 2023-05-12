@@ -2,6 +2,7 @@ import { useRecoilState } from "recoil"
 import { isBarsState, findMatchState, productState } from "./Atom"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
+import arrow from '../images/arrow.png'
 
 const FilterBar = () => {
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
@@ -48,7 +49,7 @@ const FilterBar = () => {
 					<p className="filter">Filter</p>
 					<label className="filter-label" onClick={toggleName}>
 						<p className="name">Namn</p>
-						<img className="arrow" src="/images/arrow.png" alt="dropdown menu" />
+						<img className="arrow" src={arrow} alt="dropdown menu" />
 						{isNameVisible && <div className="sort-name">
 							<div className="sort-name-high">
 								<p className="sort-name-p" onClick={handleSortHighName}>A-Ö</p>
@@ -60,7 +61,7 @@ const FilterBar = () => {
 					</label>
 					<label className="filter-label" onClick={togglePrice}>
 						<p className="price">Pris</p>
-						<img className="arrow" src="/images/arrow.png" alt="dropdown menu" />
+						<img className="arrow" src={arrow} alt="dropdown menu" />
 						{isPriceVisible && <div className="sort-price">
 							<div className="sort-price-low">
 								<p className="sort-price-p" onClick={handleSortLowPrice}>Stigande</p>
