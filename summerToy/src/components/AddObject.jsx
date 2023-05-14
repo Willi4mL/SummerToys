@@ -84,14 +84,9 @@ const AddObject = () => {
 			setIsFailedAdd(false)
 		}
 		else {
-			console.log('Saknaar en ruta')
 			setIsFailedAdd(true)
 		}
 	}
-
-	useEffect(() => {
-		console.log('Efter handleSubmit', productCard)
-	}, [productCard])
 
 	const routeLocation = useLocation()
 	const isProductsRoute = routeLocation.pathname === '/products'

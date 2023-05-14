@@ -14,7 +14,6 @@ const Products = () => {
 	const [isFilterBar, setFilterBar] = useRecoilState(isBarsState)
 	const [isLoggedIn, setIsloggedIn] = useRecoilState(isLoggedInState)
 	const [selectedProduct, setSelectedProduct] = useRecoilState(productDetailState)
-	const [isPlus, setIsPlus] = useRecoilState(addIconState)
 
 	useEffect(() => {
 		let isMounted = true
@@ -28,7 +27,7 @@ const Products = () => {
 			}
 		}
 
-		if(!productCard.length){
+		if (!productCard.length) {
 			fetchItem()
 		}
 		return () => {
@@ -41,19 +40,13 @@ const Products = () => {
 			product.name.toLowerCase().includes(search))
 
 		setFindMatch(newMatch)
-		console.log('useEffect', newMatch);
 	}, [search])
 
 	const handldeProductDetail = (item) => {
-		console.log('Clicked item', item)
 		setIsDetailVisible(true)
 		setFilterBar(false)
 		setSelectedProduct(item)
 	}
-
-	useEffect(() => {
-		console.log('Selected item from atom', selectedProduct);
-	},[selectedProduct])
 
 	if (!isAddFormVisivible && isLoggedIn) {
 		return (

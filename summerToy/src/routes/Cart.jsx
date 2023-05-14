@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 const Cart = () => {
 	const [cart, setCart] = useRecoilState(cartState)
 	const [countOne, setCountOne] = useRecoilState(cartCountOneState)
-	const [amount, setAmount] = useState(1)
 	const [total, setTotal] = useState(0)
 
 	const handleDeleteCart = (id) => {
