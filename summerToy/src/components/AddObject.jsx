@@ -73,7 +73,8 @@ const AddObject = () => {
 		}
 	}
 
-	const handleSubmit = () => {
+	const handleSubmit = (event) => {
+		event.preventDefault()
 		if (name && price && picture && description) {
 			setProductCard(newItem)
 			setFindMatch(newItem)

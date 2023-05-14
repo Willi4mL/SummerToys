@@ -86,7 +86,7 @@ const LogIn = () => {
 							{invalidPassword && 'Fel lösenord'}
 						</p>
 					</div>
-					<button className="login-button" onClick={handleLogIn}><NavLink to='/admin' style={{ textDecoration: "none", color: '#f3efef' }}> Logga in </NavLink></button>
+					<button className="login-button" onClick={handleLogIn}><NavLink to='admin/products' style={{ textDecoration: "none", color: '#f3efef' }}> Logga in </NavLink></button>
 				</form>
 			</div>}
 		</div>

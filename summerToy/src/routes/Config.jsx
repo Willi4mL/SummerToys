@@ -14,13 +14,14 @@ const router = createHashRouter([
 			{
 				path: '',
 				element: <Products />,
-
-				children: [
-					{
-						path: '/admin',
-						element: <Admin />
-					},
-				],
+			},
+			{
+				path: '/admin',
+				element: <Admin />,
+			},
+			{
+				path: '/admin/products',
+				element: <Admin />
 			},
 			{
 				path: '/products/:id',
